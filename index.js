@@ -8,7 +8,7 @@ const PREFIX = config.prefix;
 // load setting commands
 const commands = require("./commands.json");
 // update boss and gtrade info every 60 secs
-const delay = 60 * 1000;
+const delay = 5 * 60 * 1000;
 // create a json object to save the update data
 var obj = {};
 
@@ -24,7 +24,7 @@ function update() {
 
     response.on('end', function () {
       obj.kzarka = JSON.parse(body);
-      console.log("kzarka : " + JSON.stringify(obj.kzarka));
+      // console.log("kzarka : " + JSON.stringify(obj.kzarka));
     });
 
   }).on('error', function (e) {
@@ -40,7 +40,7 @@ function update() {
 
     response.on('end', function () {
       obj.kutum = JSON.parse(body);
-      console.log("kutum : " + JSON.stringify(obj.kutum));
+      // console.log("kutum : " + JSON.stringify(obj.kutum));
     });
 
   }).on('error', function (e) {
@@ -58,7 +58,7 @@ function update() {
     response.on('end', function () {
       obj.gtrade = JSON.parse(body);
       obj.gtrade.string = obj.gtrade.now_xianlu.replace(new RegExp('</li>', 'g'), " ").replace(new RegExp('<li>', 'g'), "");
-      console.log("gtrade : " + obj.gtrade.string);
+      // console.log("gtrade : " + obj.gtrade.string);
     });
   }).on('error', function (e) {
     console.log("gtrade got an error: ", e);
