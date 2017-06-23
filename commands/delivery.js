@@ -6,9 +6,12 @@ let delivery = {
   func: (bot, message, args) => {
     let time = imperialTimer.delivery.time;
     let text = imperialTimer.delivery.channel;
-    let arr = text.replace(/<li>/g, "").split(/<\/li>/g);
-
-    message.channel.send(`皇室納貢/皇室釣魚的更新\n${time}\n${arr}`);
+    try {
+      let arr = text.replace(/<li>/g, "").split(/<\/li>/g);
+      message.channel.send(`皇室納貢/皇室釣魚的更新\n${time}\n${arr}`);
+    } catch(err) {
+      message.channel.send(`皇室納貢/皇室釣魚的更新\n${time}\n目前沒有更新唷!!`);
+    }
   }
 }
 
