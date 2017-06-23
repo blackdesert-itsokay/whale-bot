@@ -15,7 +15,7 @@
     "fs": "0.0.1-security",
     "jsdom": "^11.0.0"
   },
-  "engines":{
+  "engines": {
     "node": "6.11.0"
   }
 }
