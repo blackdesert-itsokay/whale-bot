@@ -25,4 +25,4 @@ var init = () => {
 };
 
 init();
-setInterval(update, 60 * 5 * 1000);
+setInterval(update, 60 * 1000);
